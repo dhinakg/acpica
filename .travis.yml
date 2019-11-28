@@ -1,6 +1,6 @@
 language: c
 os: osx
-xcode_image: 
+osx_image: xcode11.2	
 addons: 
   homebrew:
     packages:
