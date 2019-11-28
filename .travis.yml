@@ -1,12 +1,5 @@
 language: c
 os: osx
 osx_image: xcode11.2	
-addons: 
-  homebrew:
-    packages:
-      gcc
 script:
- - which gcc
- - which gcc-9
- - gcc --version
- - CC=gcc-9 && CXX=g++-9 && CFLAGS="-mmacosx-version-min=10.7 -O3" && LDFLAGS="-mmacosx-version-min=10.7" && make iasl -j $(getconf _NPROCESSORS_ONLN)
+ - CFLAGS="-mmacosx-version-min=10.7 -O3" && LDFLAGS="-mmacosx-version-min=10.7" && make iasl -j $(getconf _NPROCESSORS_ONLN)
