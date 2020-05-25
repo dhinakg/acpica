@@ -1,5 +1,5 @@
 /*
- * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+ * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -275,7 +275,7 @@ Method(mf8c,, Serialized)
 }
 
 /*
- * 5 - Check DerefOf(<String>) - but String doesnt refer NameSpace object
+ * 5 - Check DerefOf(<String>) - but String doesn't refer NameSpace object
  */
 Method(mf8d)
 {
@@ -435,7 +435,7 @@ Method(mf90,, Serialized)
 }
 
 /*
- * 9 - Check DerefOf(<String>) - but String doesnt refer NameSpace object
+ * 9 - Check DerefOf(<String>) - but String doesn't refer NameSpace object
  */
 Method(mf91)
 {

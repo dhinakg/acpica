@@ -1,5 +1,5 @@
 /*
- * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+ * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -31,7 +31,7 @@
  *
  * SUMMARY: The EISAID doesn't provides input control of "uppercase letter" part (UUU) of EisaIdString
  *
- * Error/Warning expected but doesnt occur
+ * Error/Warning expected but doesn't occur
  */
 
 Method(mdb9)

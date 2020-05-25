@@ -1,5 +1,5 @@
     /*
-     * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+     * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
      * All rights reserved.
      *
      * Redistribution and use in source and binary forms, with or without modification,
@@ -328,8 +328,8 @@
     /* ACTUALLY: */
     /* */
     /* ArgX-String  - writes to the original String */
-    /* ArgX-Buffer  - doesnt */
-    /* ArgX-Package - doesnt */
+    /* ArgX-Buffer  - doesn't */
+    /* ArgX-Package - doesn't */
     Method (M233, 0, NotSerialized)
     {
         TS00 ("m233")

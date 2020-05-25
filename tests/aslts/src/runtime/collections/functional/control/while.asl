@@ -1,5 +1,5 @@
 /*
- * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+ * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -37,7 +37,7 @@
  * of identical structure. Each While should perform prescribed
  * number of Continue and Break operators and also execute the
  * child operator While so many times which are necessary to
- * fullfil the tasks of that child.
+ * fulfill the tasks of that child.
  *
  * The number of levels to be traveled may be
  * restricted by tvl0 variable in the range {1,50}.

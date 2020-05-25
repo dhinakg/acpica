@@ -87,6 +87,7 @@
       <CompileAs>CompileAsC</CompileAs>
       <ConformanceMode>true</ConformanceMode>
       <BrowseInformation>true</BrowseInformation>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <PreLinkEvent>
       <Command>if NOT EXIST ..\..\libraries mkdir ..\..\libraries</Command>
@@ -139,6 +140,7 @@
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <CallingConvention>FastCall</CallingConvention>
       <CompileAs>CompileAsC</CompileAs>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <PreLinkEvent>
       <Command>if NOT EXIST ..\..\libraries mkdir ..\..\libraries</Command>
@@ -443,23 +445,15 @@
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </AdditionalInputs>
     </CustomBuild>
-    <CustomBuild Include="..\..\source\compiler\aslcompiler.y">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bison -d -l -pAslCompiler -v %(FullPath) -vd -o%(Filename).y.c</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Yaccing %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).y.c;%(Filename).y.h</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bison -d -l -pAslCompiler -v %(FullPath) -vd -o%(Filename).y.c</Command>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Yaccing %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).y.c;%(Filename).y.h</Outputs>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-      </AdditionalInputs>
-    </CustomBuild>
     <CustomBuild Include="..\..\source\compiler\aslparser.y">
-      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">m4 -P -I%(RootDir)%(Directory) %(FullPath) &gt; %(RootDir)%(Directory)/aslcompiler.y</Command>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">m4 -P -I%(RootDir)%(Directory) %(FullPath) &gt; aslcompiler.y</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Macro-processing %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RootDir)%(Directory)/aslcompiler.y</Outputs>
-      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">m4 -P -I%(RootDir)%(Directory) %(FullPath) &gt; %(RootDir)%(Directory)/aslcompiler.y</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">aslcompiler.y</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">m4 -P -I%(RootDir)%(Directory) %(FullPath) &gt; aslcompiler.y</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Macro-processing %(FullPath)</Message>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RootDir)%(Directory)/aslcompiler.y</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">aslcompiler.y</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(RelativeDir)asltokens.y;%(RelativeDir)asltypes.y;%(RelativeDir)aslrules.y;%(RelativeDir)aslprimaries.y;%(RelativeDir)aslcstyle.y;%(RelativeDir)aslkeywords.y;%(RelativeDir)aslresources.y;%(RelativeDir)aslhelpers.y;%(RelativeDir)aslsupport.y</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(RelativeDir)asltokens.y;%(RelativeDir)asltypes.y;%(RelativeDir)aslrules.y;%(RelativeDir)aslprimaries.y;%(RelativeDir)aslcstyle.y;%(RelativeDir)aslkeywords.y;%(RelativeDir)aslresources.y;%(RelativeDir)aslhelpers.y;%(RelativeDir)aslsupport.y</AdditionalInputs>
     </CustomBuild>
     <CustomBuild Include="..\..\source\compiler\dtparser.l">
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">flex -PDtParser -o%(Filename).l.c %(FullPath)</Command>
@@ -517,6 +511,26 @@
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bison -d -l -pDtCompilerParser -v %(FullPath) -vd -o%(Filename).y.c</Command>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Yaccing %(FullPath)</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).y.c;%(Filename).y.h</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\source\compiler\aslcstyle.y" />
+    <None Include="..\..\source\compiler\aslhelpers.y" />
+    <None Include="..\..\source\compiler\aslkeywords.y" />
+    <None Include="..\..\source\compiler\aslprimaries.y" />
+    <None Include="..\..\source\compiler\aslresources.y" />
+    <None Include="..\..\source\compiler\aslrules.y" />
+    <None Include="..\..\source\compiler\aslsupport.y" />
+    <None Include="..\..\source\compiler\asltokens.y" />
+    <None Include="..\..\source\compiler\asltypes.y" />
+    <CustomBuild Include="aslcompiler.y">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">bison -d -l -pAslCompiler -v %(FullPath) -vd -o%(Filename).y.c</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Yaccing %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename).y.c;%(Filename).y.h</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">bison -d -l -pAslCompiler -v %(FullPath) -vd -o%(Filename).y.c</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Yaccing %(FullPath)</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename).y.c;%(Filename).y.h;%(Outputs)</Outputs>
     </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

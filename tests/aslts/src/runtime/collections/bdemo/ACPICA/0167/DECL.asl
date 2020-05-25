@@ -1,5 +1,5 @@
     /*
-     * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+     * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
      * All rights reserved.
      *
      * Redistribution and use in source and binary forms, with or without modification,
@@ -30,7 +30,7 @@
      *
      * SUMMARY: Manipulation test PASS but started reporting suspicious diagnostic
      *
-     * Check that messages doesnt occur...
+     * Check that messages doesn't occur...
      * but since it was due to the incorrect size of Package
      * generated in that case we do this test as runtime test
      * (but not ACTION_REQUIRED type).

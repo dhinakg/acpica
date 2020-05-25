@@ -1,5 +1,5 @@
     /*
-     * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+     * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
      * All rights reserved.
      *
      * Redistribution and use in source and binary forms, with or without modification,
@@ -30,7 +30,7 @@
      *
      * SUMMARY: Exception occurs on attempt to rewrite Device type object passed by ArgX to Method
      *
-     * Check that exception doesnt occur
+     * Check that exception doesn't occur
      */
     Method (MF43, 1, NotSerialized)
     {

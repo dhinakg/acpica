@@ -1,5 +1,5 @@
     /*
-     * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+     * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
      * All rights reserved.
      *
      * Redistribution and use in source and binary forms, with or without modification,
@@ -30,7 +30,7 @@
      *
      * SUMMARY: Attempt to declare Field inside the If scope causes exception
      *
-     * Check that exception doesnt occur
+     * Check that exception doesn't occur
      */
     Method (MF48, 0, Serialized)
     {

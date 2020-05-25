@@ -1,5 +1,5 @@
 /*
- * Some or all of this work - Copyright (c) 2006 - 2019, Intel Corp.
+ * Some or all of this work - Copyright (c) 2006 - 2020, Intel Corp.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without modification,
@@ -33,7 +33,7 @@
  */
 
 /*
-SEE: why exception doesnt occur for uninitialized elements there??????
+SEE: why exception doesn't occur for uninitialized elements there??????
 SEE: use all the specific cases specified in DOCUMENT 1.
 SEE: add the tests for "Specification of Match should explicitly say
      that no exceptions occur while this "cruising through the package""
